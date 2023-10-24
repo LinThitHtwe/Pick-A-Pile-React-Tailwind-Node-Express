@@ -10,7 +10,7 @@ const Pile = () => {
       {isPending && <span>Loading...</span>}
       {data &&
         data.map((d) => (
-          <Link to={"/"}>
+          <Link to={"/answer/:id"}>
             <div
               className="bg-gray-600 rounded-md overflow-hidden shadow-md max-h-[550px] hover:scale-105 transition ease-in-out duration-500 cursor-pointer"
               key={d.AnswerId}

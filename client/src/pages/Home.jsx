@@ -1,5 +1,5 @@
 import React from "react";
-import Pile from "./Pile";
+import Pile from "../components/Pile";
 import axios from "axios";
 
 const Home = () => {
