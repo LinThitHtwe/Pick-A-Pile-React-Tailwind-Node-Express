@@ -10,26 +10,27 @@ const Pile = () => {
       {isPending && <span>Loading...</span>}
       {data &&
         data.map((d) => (
-          <Link to={"/answer/:id"}>
-            <div
-              className="bg-gray-600 rounded-md overflow-hidden shadow-md max-h-[550px] hover:scale-105 transition ease-in-out duration-500 cursor-pointer"
-              key={d.AnswerId}
-            >
-              <img
-                src={`../assets/articles/1/1.jpg`}
-                alt="Pile-Image"
-                className="min-w-[100%] max-h-[80%]"
-              />
-              <div className="p-4">
-                <div className="mb-4">
-                  <span className="text-2xl">Title Text</span>
-                </div>
-                <a href="#" className="bg-gray-500 rounded-md p-2 m-">
-                  Read More
-                </a>
+          <div
+            className="bg-gray-600 rounded-md overflow-hidden shadow-md max-h-[550px] hover:scale-105 transition ease-in-out duration-500 "
+            key={d.AnswerId}
+          >
+            <img
+              src={`../assets/articles/1/1.jpg`}
+              alt="Pile-Image"
+              className="min-w-[100%] max-h-[80%]"
+            />
+            <div className="p-4">
+              <div className="mb-4">
+                <span className="text-2xl">Title Text</span>
               </div>
+              <Link
+                to={"/answer/:id"}
+                className="bg-gray-500 rounded-md p-2 cursor-pointer"
+              >
+                Read More
+              </Link>
             </div>
-          </Link>
+          </div>
         ))}
     </div>
   );

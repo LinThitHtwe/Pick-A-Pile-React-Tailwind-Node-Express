@@ -5,15 +5,21 @@ const getAnswersByQuestionIdService = (questionId) => {
     (a) => a.QuestionId == questionId
   );
 
-  if (answersForEachQuestion.length === 0) {
+  if (answersForEachQuestion.length === 0)
     return { error: "Cannot Get Answers" };
-  }
-
-  //const extractedAnswers = answersForEachQuestion.map((a) => a.Answers);
 
   return answersForEachQuestion;
 };
 
+const getAnswerByAnswerIdService = (answerId) => {
+  const answer = answers.Answers.find((a) => (a.AnswerId = answerId));
+
+  if (!answer) return { error: "No Answer Found" };
+
+  return answer;
+};
+
 module.exports = {
   getAnswersByQuestionIdService,
+  getAnswerByAnswerIdService,
 };
