@@ -11,5 +11,5 @@ app.listen(8000, () => {
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use("questions/", questionRoute);
+app.use("/questions/", questionRoute);
 app.use("/", answersRoute);

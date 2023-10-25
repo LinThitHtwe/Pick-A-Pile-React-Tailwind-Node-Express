@@ -3,6 +3,7 @@ import "./App.css";
 import Home from "./pages/Home";
 import Answer from "./pages/Answer";
 import axios from "axios";
+import Pile from "./pages/Pile";
 
 function App() {
   axios.defaults.baseURL = "http://localhost:8000/";
@@ -10,7 +11,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/:questionId" element={<Home />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/:questionId" element={<Pile />} />
           <Route path="/answer/:answerId" element={<Answer />} />
         </Routes>
       </BrowserRouter>

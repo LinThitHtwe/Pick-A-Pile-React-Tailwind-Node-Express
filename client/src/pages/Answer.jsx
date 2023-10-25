@@ -1,11 +1,9 @@
 import React from "react";
-import one from "../assets/articles/1/1.jpg";
 import { Link, useParams } from "react-router-dom";
 import useFetchData from "../hooks/useFetchData";
 const Answer = () => {
   const { answerId } = useParams();
   const fetchUrl = `/answer/${answerId}`;
-  console.log(fetchUrl);
   const { data, isPending, error } = useFetchData(fetchUrl);
 
   return (
@@ -14,9 +12,10 @@ const Answer = () => {
         {data && (
           <>
             <div className="p-8 mt-16 flex flex-col gap-8">
-              <img src={one} />
+              <p>{data.AnswerImageUrl}</p>
+              <img src={`${data.AnswerImageUrl}`} />
               <Link
-                to="/1"
+                to={`/${data.QuestionId}`}
                 className="bg-gray-500 w-16 h-8  rounded-md text-center pt-1 hover:bg-gray-400 "
               >
                 Back

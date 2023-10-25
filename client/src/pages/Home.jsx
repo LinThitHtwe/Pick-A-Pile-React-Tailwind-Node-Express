@@ -1,6 +1,7 @@
 import React from "react";
-import Pile from "../components/Pile";
+import PileCard from "../components/PileCard";
 import axios from "axios";
+import Questions from "../components/Questions";
 
 const Home = () => {
   return (
@@ -8,7 +9,8 @@ const Home = () => {
       <div>
         <h2 className="text-4xl ml-4">Pick A Pile</h2>
       </div>
-      <Pile />
+      <PileCard />
+      {/* <Questions /> */}
     </div>
   );
 };
