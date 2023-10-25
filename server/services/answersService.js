@@ -12,10 +12,9 @@ const getAnswersByQuestionIdService = (questionId) => {
 };
 
 const getAnswerByAnswerIdService = (answerId) => {
-  const answer = answers.Answers.find((a) => (a.AnswerId = answerId));
+  const answer = answers.Answers.find((a) => a.AnswerId == answerId);
 
   if (!answer) return { error: "No Answer Found" };
-
   return answer;
 };
 

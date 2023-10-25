@@ -3,7 +3,6 @@ import Pile from "../components/Pile";
 import axios from "axios";
 
 const Home = () => {
-  axios.defaults.baseURL = "http://localhost:8000/";
   return (
     <div className="bg-gradient-to-r from-gray-700 to-gray-800 h-screen text-white p-4">
       <div>

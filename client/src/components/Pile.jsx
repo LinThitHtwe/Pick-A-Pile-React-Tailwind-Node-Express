@@ -24,7 +24,7 @@ const Pile = () => {
                 <span className="text-2xl">Title Text</span>
               </div>
               <Link
-                to={"/answer/:id"}
+                to={`/answer/${d.AnswerId}`}
                 className="bg-gray-500 rounded-md p-2 cursor-pointer"
               >
                 Read More
