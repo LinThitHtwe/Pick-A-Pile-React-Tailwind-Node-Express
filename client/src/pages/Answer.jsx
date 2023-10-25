@@ -8,10 +8,11 @@ const Answer = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-5 bg-gradient-to-r from-gray-700 to-gray-800 text-white h-screen">
+      <div className="grid grid-cols-6 bg-gradient-to-r from-gray-700 to-gray-800 text-white h-screen px-40">
+        {isPending && <p>Loading...</p>}
         {data && (
           <>
-            <div className="p-8 mt-16 flex flex-col gap-8">
+            <div className="col-span-2 p-8 mt-16 flex flex-col gap-8">
               <Link to={`/${data.QuestionId}`}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +32,7 @@ const Answer = () => {
               <img
                 src={`/${data.AnswerImageUrl}`}
                 alt="Image"
-                className="hover:scale-105 transition ease-in-out duration-300 h-[400px] object-cover rounded-md"
+                className="hover:scale-105 transition ease-in-out duration-300 h-[400px] w-full object-cover rounded-md"
               />
             </div>
             <div className="col-span-4 p-20 flex flex-col gap-10 items-center content-center mt-16">

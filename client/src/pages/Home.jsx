@@ -7,9 +7,9 @@ const Home = () => {
   return (
     <div className="bg-gradient-to-r from-gray-700 to-gray-800 h-screen text-white p-4">
       <div>
-        <h2 className="text-4xl ml-4">Pick A Pile</h2>
+        <h2 className="text-4xl ml-8 mt-4">Pick A Pile</h2>
       </div>
-      {/* <PileCard /> */}
+
       <Questions />
     </div>
   );
