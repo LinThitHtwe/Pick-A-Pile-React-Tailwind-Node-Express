@@ -1,12 +1,11 @@
 const questions = require("../data/questions");
-const answers = require("../data/answers");
 const { getAnswersByQuestionIdService } = require("./answersService");
 
 const getAllQuestionsService = () => {
   const allQuestions = questions.Questions;
   const combineData = allQuestions.map((q) => {
     const answer = getAnswersByQuestionIdService(q.QuestionId);
-    const answerImageUrls = answer.map((answer) => answer.AnswerImageUrl);
+    const answerImageUrls = answer.map((a) => a.AnswerImageUrl);
     return {
       ...q,
       answerImageUrls: answerImageUrls[0],
