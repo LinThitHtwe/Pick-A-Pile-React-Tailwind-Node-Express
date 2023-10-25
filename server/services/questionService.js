@@ -1,7 +1,18 @@
 const questions = require("../data/questions");
+const answers = require("../data/answers");
+const { getAnswersByQuestionIdService } = require("./answersService");
 
 const getAllQuestionsService = () => {
-  return questions.Questions;
+  const allQuestions = questions.Questions;
+  const combineData = allQuestions.map((q) => {
+    const answer = getAnswersByQuestionIdService(q.QuestionId);
+    const answerImageUrls = answer.map((answer) => answer.AnswerImageUrl);
+    return {
+      ...q,
+      answerImageUrls: answerImageUrls[0],
+    };
+  });
+  return combineData;
 };
 
 const getQuestionByIdService = (questionId) => {
@@ -9,6 +20,7 @@ const getQuestionByIdService = (questionId) => {
     return q.QuestionId == questionId;
   });
   if (!question) return { error: "No Question Found" };
+
   return question;
 };
 

@@ -12,14 +12,27 @@ const Answer = () => {
         {data && (
           <>
             <div className="p-8 mt-16 flex flex-col gap-8">
-              <p>{data.AnswerImageUrl}</p>
-              <img src={`${data.AnswerImageUrl}`} />
-              <Link
-                to={`/${data.QuestionId}`}
-                className="bg-gray-500 w-16 h-8  rounded-md text-center pt-1 hover:bg-gray-400 "
-              >
-                Back
+              <Link to={`/${data.QuestionId}`}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 hover:scale-105 transition ease-in-out duration-300"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
+                  />
+                </svg>
               </Link>
+              <img
+                src={`/${data.AnswerImageUrl}`}
+                alt="Image"
+                className="hover:scale-105 transition ease-in-out duration-300 h-[400px] object-cover rounded-md"
+              />
             </div>
             <div className="col-span-4 p-20 flex flex-col gap-10 items-center content-center mt-16">
               <h2 className="text-4xl">{data.AnswerName}</h2>

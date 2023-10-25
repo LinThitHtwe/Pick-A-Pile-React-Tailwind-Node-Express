@@ -26,10 +26,6 @@ const PileCard = () => {
                   <div className="mb-4">
                     <span className="text-2xl">Title Text</span>
                   </div>
-
-                  {/* className="bg-gray-500 rounded-md p-2 cursor-pointer"
-                >
-                  Read More */}
                 </div>
               </div>
             </Link>

@@ -9,8 +9,8 @@ const Home = () => {
       <div>
         <h2 className="text-4xl ml-4">Pick A Pile</h2>
       </div>
-      <PileCard />
-      {/* <Questions /> */}
+      {/* <PileCard /> */}
+      <Questions />
     </div>
   );
 };
